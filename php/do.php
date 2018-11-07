@@ -11,10 +11,10 @@
             return password_hash($value, PASSWORD_DEFAULT);
         }
 
-        function createToken($id, $nome, $usuario, $email) {
+        function createToken($id, $name, $user, $email) {
             $date = date('Y-m-d H:i:s');
             $rand = mt_rand();
-            return sha1($id.$nome.$usuario.$email.$date.$rand._SECRET_);
+            return sha1($id.$name.$user.$email.$date.$rand._SECRET_);
         }
 
         function isLogged($id) {
